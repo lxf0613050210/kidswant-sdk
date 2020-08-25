@@ -3,7 +3,6 @@
 namespace Tests\Unit;
 
 use Seekx2y\KidsWantSDK\KidsWant;
-use Seekx2y\KidsWantSDK\Orders;
 use PHPUnit\Framework\TestCase;
 
 class SearchOrdersTest extends TestCase
@@ -18,7 +17,8 @@ class SearchOrdersTest extends TestCase
                 'loginName' => 'w1000125',
                 'appkey' => 'DAD3BBF2098B4F1B9F85B66523254F78',
             ],
-            'debug' => true
+            'isDev' => true, // 必填，是否使用测试环境URL
+            'debug' => true // 非必填，是否查看http请求详情
         ];
     }
 

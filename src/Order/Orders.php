@@ -17,7 +17,6 @@ class Orders extends Api
      * @param null $startTime
      * @param null $timeParamType 时间参数类型： 选填（默认下单时间）1- 下单时间，  2- 更新时间
      * @return \Psr\Http\Message\ResponseInterface
-     * @throws \Hanson\Foundation\Exception\HttpException
      */
     public function getOrderList($page = 1, $pageSize = 10, $dealState = 2, $endTime = null, $startTime = null, $timeParamType = null)
     {
@@ -45,7 +44,6 @@ class Orders extends Api
      * 查询订单明细接口
      * @param string $orderNum
      * @return \Psr\Http\Message\ResponseInterface
-     * @throws \Hanson\Foundation\Exception\HttpException
      */
     public function getOrderDetail(string $orderNum)
     {
@@ -53,7 +51,7 @@ class Orders extends Api
             'orderNum' => $orderNum,
         ];
 
-        return $this->request('selectBusinessOrderList.do', $param);
+        return $this->request('selectBusinessOrderDetail.do', $param);
     }
 
     /**
@@ -61,7 +59,6 @@ class Orders extends Api
      * @param int $expressType
      * @param string $expressId
      * @return \Psr\Http\Message\ResponseInterface
-     * @throws \Hanson\Foundation\Exception\HttpException
      */
     public function delivery(string $orderNum, int $expressType, string $expressId)
     {

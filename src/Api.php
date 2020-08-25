@@ -31,7 +31,7 @@ class Api extends AbstractAPI
         $config = $this->app->getConfig();
         $params = array_merge($params, $config['common']);
         $jsonStr = json_encode($params, JSON_UNESCAPED_UNICODE);
-        $url = $config['debug'] ? static::DEV_URL : static::PRODUCTION_URL;
+        $url = $config['isDev'] ? static::DEV_URL : static::PRODUCTION_URL;
         $response = $this->getHttp()->request('GET', $url . $interfaceName . '?jsonStr=' . $jsonStr, ['debug' => $config['debug']]);
 
         return json_decode(strval($response->getBody()));
