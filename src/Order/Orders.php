@@ -65,7 +65,7 @@ class Orders extends Api
         $param = [
             'orderNum' => $orderNum,
             'expressType' => $expressType,
-            'expressId' => $expressId
+            'expresslId' => $expressId
         ];
 
         return $this->request('submitExpresslId.do', $param);
