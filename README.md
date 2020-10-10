@@ -15,8 +15,8 @@ composer require seek-x2y/kidswant-sdk -vvv
 ```php
 $config = [
     'common' => [
-        'loginName' => 'w1000125',
-        'appkey' => 'DAD3BBF2098B4F1B9F85B66523254F78',
+        'loginName' => '',
+        'appkey' => '',
     ],
     'isDev' => true, // 是否使用测试环境URL
     'debug' => true // // 是否查看http请求详情
